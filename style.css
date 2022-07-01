@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@200;400;500;600&display=swap');
+
+body {
+  font-family: 'Anek Malayalam', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  grid-template-rows: 130px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: rgb(26, 146, 213);
+  grid-column: 1 / 2;
+  grid-row: 1 / span 5;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar > div {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.top-bar {
+  background: white;
+  position: relative;
+  grid-column: 2 / 6;
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+  /* Make sure that box shadow appears on project grid */
+  z-index: 2;
+}
+
+.info-heading {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.top-bar-upper {
+  display: grid;
+  /* Search-bar and account-info */
+  grid-template-columns: 4fr 2fr;
+  align-items: center;
+}
+
+.top-bar-upper .search {
+  display: grid;
+  grid-column: 1 / 2;
+  /* Magnifier and search-bar */
+  grid-template-columns: 1fr 7fr;
+  gap: 1rem;
+  margin: 0 0 0 2rem;
+}
+
+.search .search-btn {
+  grid-column: 1 / 2;
+}
+
+.greeting {
+  font-size: 0.8em;
+}
+
+.search .search-bar {
+  grid-column: 2 / 3;
+}
+
+.top-bar-upper .account {
+  display: grid;
+  grid-column: 2 / 3;
+  grid-template-columns: 1fr 1fr 3fr;
+  justify-items: center;
+}
+
+.top-bar-lower {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  margin: 0.75rem 0;
+}
+
+.personal-info {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+  margin: 0 2rem;
+  gap: 20px;
+}
+
+.creation-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.main-content {
+  background: rgb(226, 232, 240);
+  grid-column: 2 / 6;
+  grid-row: 2 / span 4;
+  position: relative;
+  overflow: overlay;
+}
+
+.main-content-wrapper {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+}
+
+.projects {
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+
+.main-content-side-wrapper {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  /* Without this, two rows are spread equally to fit to bottom of page */
+  height: fit-content;
+  /* row-gap: 240px; */
+  justify-content: center;  
+}
+
+.announcements {
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+
+.trending {
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  margin: 50px 0 0 0;
+}
+
+.dashboard-title {
+  display: grid;
+  align-items: center;
+  color: black;
+  font-size: 22px;
+}
+
+.projects > * {
+  margin: 0 1.25rem;
+}
+
+.card-wrapper {
+  display: grid;
+  /* Control num. of clms and allow width to be dynamic */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  /* Prevent auto rows from spreading too much when sidebar grows with increased text length*/
+  grid-template-rows: repeat(auto-fill, minmax(215px, 230px));
+  gap: 30px;
+  margin: 0 1.25rem 50px 1.25rem;
+}
+
+.cards {
+  /* width: 21rem; */
+  height: 180px;
+  border-radius: 8px;
+  padding: 20px 25px 30px 35px;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  /* Imitate a yellow stripe on the left of a card */
+  background: linear-gradient(to right, #f0b42e 12px, white 12px 100%);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px 3px 8px;
+}
+
+.announcement-card {
+  display: grid;
+  /* Grow row according to length of text */
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  /* Parent div grows based on child */
+  height: fit-content;
+  background: white;
+  min-width: 190px;
+  max-width: 90%;
+  margin: 0 18px 0 0;
+  padding: 35px 48px 48px 35px;
+  overflow: auto;
+}
+
+.trending-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+  background: white;
+  height: fit-content;
+  min-width: 190px;
+  max-width: 100%;
+  margin: 0 18px 0 0;
+  padding: 35px 48px 48px 35px;
+  overflow: auto;
+  gap: 20px;
+}
+
+.user {
+
+}
+
+hr {
+  margin: 20px 0;
+}
+
+.announcement-card {
+  display: grid;
+  /* grid-template-rows: repeat(auto-fill); */
+}
+
+.cards > .option-btns {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  align-items: end;
+  margin: 15px 0 0 0;
+}
+
+.cards > .project-abstract {
+  color: grey;
+}
+
+.cards > .project-heading {
+  display: grid;
+  align-items: end;
+  font-weight: 900;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  margin: 0 0 0 10px;
+  gap: 30px;
+}
+
+.user-name {
+  color: rgb(124, 124, 124);
+}
+
+.fav-btn {
+  grid-column: 2 / 3;
+}
+
+.watch-list-btn {
+  grid-column: 3 / 4;
+}
+
+.share-btn {
+  grid-column: 4 / 5;
+}
